@@ -27,6 +27,7 @@ modules:
       - zsh
       - bolt
       - gcc-c++
+      - hyprland
       - hypridle
       - hyprlock
     remove:
