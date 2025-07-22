@@ -48,13 +48,15 @@ modules:
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
-  - type: rpm
+  - type: dnf
     repos:
-      - https://copr.fedorainfracloud.org/coprs/szydell/system76/repo/fedora-%OS_VERSION/szydell-system76-fedora-%OS_VERSION.repo
+      copr:
+        - szydell/system76
     install:
-      - system76-power
-      - system76-acpi-dkms
-      - system76-dkms
+      packages:
+        - system76-power
+        - system76-acpi-dkms
+        - system76-dkms
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
