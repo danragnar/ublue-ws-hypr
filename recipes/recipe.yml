@@ -20,7 +20,6 @@ modules:
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/szydell/system76/repo/fedora-%OS_VERSION/szydell-system76-fedora-42.repo
     install:
       - micro
       - starship
@@ -29,9 +28,6 @@ modules:
       - byobu
       - xdg-desktop-portal-wlr
       - gcc-c++
-      - system76-power
-      - system76-acpi-dkms
-      - system76-dkms
 
     replace:
       - from-repo: https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-%OS_VERSION%/solopasha-hyprland-fedora-%OS_VERSION%.repo
@@ -51,6 +47,14 @@ modules:
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+
+  - type: rpm
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/szydell/system76/repo/fedora-%OS_VERSION/szydell-system76-fedora-%OS_VERSION.repo
+    install:
+      - system76-power
+      - system76-acpi-dkms
+      - system76-dkms
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
