@@ -58,6 +58,8 @@ modules:
         - system76-acpi-dkms
         - system76-dkms
         - system76-driver
+        - system76-io-dkms
+        - system76_ectool
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
